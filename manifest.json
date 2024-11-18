@@ -1,0 +1,16 @@
+{
+  "name": "Jira Helper",
+  "description": "Utilities to enhance JIRA experience.",
+  "version": "0.5",
+  "permissions": ["clipboardWrite", "contextMenus", "offscreen"],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "icons": {
+    "16": "misc/icon16.png",
+    "32": "misc/icon32.png",
+    "48": "misc/icon48.png",
+    "128": "misc/icon128.png"
+  },
+  "manifest_version": 3
+}
