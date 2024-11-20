@@ -1,7 +1,7 @@
 {
   "name": "Jira Helper",
   "description": "Makes small enhancements to your JIRA experience.",
-  "version": "0.5",
+  "version": "0.5.0",
   "permissions": ["clipboardWrite", "contextMenus", "offscreen"],
   "background": {
     "service_worker": "service_worker.js"
