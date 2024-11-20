@@ -15,5 +15,12 @@ if [ ! -f "$extPath/manifest.json" ]; then
   exit 1
 fi
 
-"$chromePath" --pack-extension="$extPath" --pack-extension-key="/Users/$USER/.secret/JiraHelper.pem"
+keyPath="/Users/$USER/.secret/JiraHelper.pem"
+if [ ! -f "$keyPath" ]; then
+  echo "Missing: $keyPath"
+  echo "Aborting."
+  exit 1
+fi
+
+"$chromePath" --pack-extension="$extPath" --pack-extension-key="$keyPath"
 
