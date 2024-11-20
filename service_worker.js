@@ -1,3 +1,5 @@
+const JIRA_TICKET_URL_PATTERN = 'https://*.atlassian.net/browse/*';
+
 /**
  * Copy the given data to the clipboard.
  *
@@ -91,21 +93,26 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.runtime.onInstalled.addListener(function () {
+
+
   // @todo Only apply to JIRA issue URLs.
   chrome.contextMenus.create({
     contexts: ['page'],
+    documentUrlPatterns: [JIRA_TICKET_URL_PATTERN],
     id: 'copy_ticket_id',
     title: 'Copy ticket ID',
   });
 
   chrome.contextMenus.create({
     contexts: ['page'],
+    documentUrlPatterns: [JIRA_TICKET_URL_PATTERN],
     id: 'copy_ticket_id_summary',
     title: 'Copy ticket ID and summary',
   });
 
   chrome.contextMenus.create({
     contexts: ['page'],
+    documentUrlPatterns: [JIRA_TICKET_URL_PATTERN],
     id: 'copy_ticket_summary_url',
     title: 'Copy ticket summary and URL',
   });
