@@ -23,6 +23,18 @@ The extension adds context menu items on JIRA ticket pages.
 
 ![](misc/screenshots/context-menu.png "Screenshot of Jira Helper context menu")
 
+## Development
+
+- All suggestions and bug reports go to the [issue queue on GitHub](https://www.github.com/jigarius/jira-helper-crx/issues).
+- During development, use the _load unpacked extension_ feature to load the
+  directory containing the plugin's source code.
+- To release a new version,
+  - Update the `version` string in `manifest.json`.
+  - Push a version tag, e.g. `v0.5.0`.
+  - Execute `./scripts/pack.sh` to create a `.crx` file.
+  - Create a release on GitHub with the version tag.
+  - Attach the packed extension (`.crx`) to the release.
+
 ## Acknowledgements
 
 This Chrome Extension was created with ❤️ by [Jigarius](https://jigarius.com/about).
