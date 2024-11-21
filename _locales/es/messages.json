@@ -1,0 +1,17 @@
+{
+  "ext_name": {
+    "message": "Jira Helper"
+  },
+  "ext_description": {
+    "message": "Proporciona pequeñas mejoras a tu experiencia en JIRA."
+  },
+  "cmenu_copy_ticket_id": {
+    "message": "Copiar el ID de la incidencia"
+  },
+  "cmenu_copy_ticket_id_summary": {
+    "message": "Copiar el ID y el resumen de la incidencia"
+  },
+  "cmenu_copy_ticket_id_summary_url": {
+    "message": "Copiar el ID, el resumen y la URL de la incidencia"
+  }
+}
