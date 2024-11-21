@@ -1,0 +1,19 @@
+{
+  "ext_name": {
+    "message": "Jira Helper",
+    "description": "Extension name."
+  },
+  "ext_description": {
+    "message": "Makes small enhancements to your JIRA experience.",
+    "description": "Extension description."
+  },
+  "cmenu_copy_ticket_id": {
+    "message": "Copy ticket ID"
+  },
+  "cmenu_copy_ticket_id_summary": {
+    "message": "Copy ticket ID and summary"
+  },
+  "cmenu_copy_ticket_id_summary_url": {
+    "message": "Copy ticket ID, summary and URL"
+  }
+}

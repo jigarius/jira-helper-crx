@@ -62,14 +62,14 @@ async function doCopyTicketIdSummary(tab) {
  * @param tab
  * @returns {Promise<void>}
  */
-async function doCopyTicketSummaryUrl(tab) {
+async function doCopyTicketIdSummaryUrl(tab) {
   // Sample value of tab.title: [XQS-38] poop - Jira.
   let matches = tab.title.match(/\[(?<id>[a-z0-9]+\-\d+)\] (?<summary>.+) - Jira/i);
   if (!matches) {
     return;
   }
 
-  const data = `${matches.groups.summary} - ${tab.url}`;
+  const data = `${matches.groups.id} - ${matches.groups.summary} - ${tab.url}`;
   return copyToClipboard(data);
 }
 
@@ -83,8 +83,8 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       doCopyTicketIdSummary(tab);
       break;
 
-    case 'copy_ticket_summary_url':
-      doCopyTicketSummaryUrl(tab);
+    case 'copy_ticket_id_summary_url':
+      doCopyTicketIdSummaryUrl(tab);
       break;
 
     default:
@@ -93,27 +93,24 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.runtime.onInstalled.addListener(function () {
-
-
-  // @todo Only apply to JIRA issue URLs.
   chrome.contextMenus.create({
     contexts: ['page'],
     documentUrlPatterns: [JIRA_TICKET_URL_PATTERN],
     id: 'copy_ticket_id',
-    title: 'Copy ticket ID',
+    title: chrome.i18n.getMessage('cmenu_copy_ticket_id'),
   });
 
   chrome.contextMenus.create({
     contexts: ['page'],
     documentUrlPatterns: [JIRA_TICKET_URL_PATTERN],
     id: 'copy_ticket_id_summary',
-    title: 'Copy ticket ID and summary',
+    title: chrome.i18n.getMessage('cmenu_copy_ticket_id_summary'),
   });
 
   chrome.contextMenus.create({
     contexts: ['page'],
     documentUrlPatterns: [JIRA_TICKET_URL_PATTERN],
-    id: 'copy_ticket_summary_url',
-    title: 'Copy ticket summary and URL',
+    id: 'copy_ticket_id_summary_url',
+    title: chrome.i18n.getMessage('cmenu_copy_ticket_id_summary_url'),
   });
 });
